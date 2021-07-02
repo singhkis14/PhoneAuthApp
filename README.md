@@ -9,3 +9,6 @@ This app helps either to build new habits or break the old habit.
 
 ## Developers Note
 Add your google services file from Firebase account.
+Following services must be activated in Firebase account:
+<br/>
+> Authentication - Mobile
