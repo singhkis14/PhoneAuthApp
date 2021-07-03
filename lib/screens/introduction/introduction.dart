@@ -13,7 +13,9 @@ class AppIntroductionScreen extends StatelessWidget{
     IntroductionScreen appIntroScreen = IntroductionScreen(
       pages: _introductionPagesList,
       done: const Text("Done", style: TextStyle(fontWeight: FontWeight.w600)),
-      onDone: () {},
+      onDone: () {
+        Navigator.pushReplacementNamed(context, '/login');
+      },
       showNextButton: false,
       showSkipButton: false,
     );

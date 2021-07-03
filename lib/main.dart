@@ -1,8 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:habit_o_meter/screens/error/error.dart';
+import 'package:habit_o_meter/screens/home/home.dart';
 import 'package:habit_o_meter/screens/introduction/introduction.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:habit_o_meter/screens/loading/loading.dart';
+import 'package:habit_o_meter/screens/login/login.dart';
 
 void main() {
   runApp(MatApp());
@@ -18,6 +20,12 @@ class MatApp extends StatelessWidget {
         primarySwatch: Colors.blue,
       ),
       home: MyApp(),
+      routes: {
+        // When navigating to the "/" route, build the FirstScreen widget.
+        '/login': (context) => LoginScreen(),
+        // When navigating to the "/second" route, build the SecondScreen widget.
+        '/home': (context) => HomeScreen(),
+      },
     );
   }
 }
