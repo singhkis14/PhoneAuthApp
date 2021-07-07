@@ -8,13 +8,14 @@ class AppIntroductionScreen extends StatelessWidget{
 
   @override
   Widget build(BuildContext context) {
+
     List<PageViewModel> _introductionPagesList = IntroductionPageFactory.introductionPages;
 
     IntroductionScreen appIntroScreen = IntroductionScreen(
       pages: _introductionPagesList,
-      done: const Text("Done", style: TextStyle(fontWeight: FontWeight.w600)),
+      done: const Text("Get Started", style: TextStyle(fontWeight: FontWeight.w600)),
       onDone: () {
-        Navigator.pushReplacementNamed(context, '/login');
+        Navigator.pushNamed(context, '/login');
       },
       showNextButton: false,
       showSkipButton: false,
