@@ -75,5 +75,6 @@ class AuthModel extends ChangeNotifier{
 
   void logout(){
     this._auth.signOut();
+    _currentLoginState = LoginView.Phone;
   }
 }
