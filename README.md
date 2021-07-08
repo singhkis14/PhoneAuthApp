@@ -1,11 +1,9 @@
-# HabitOMeter
+# Phone Auth With Flutter and Firebase
+This is a sample boilerplate code to demonstrate a simple app with Phone Auth.
 
-An app to track your habits.
-
-This app helps either to build new habits or break the old habit. 
-
-## Getting Started
-
+## Key Features - 
+1. user can login using Phone Number and OTP and lands on Home Page.
+2. Introduction screen
 
 ## Developers Note
 Add your google services file from Firebase account.
