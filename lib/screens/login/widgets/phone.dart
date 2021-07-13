@@ -45,7 +45,7 @@ class _PhoneNumberPageState extends State<PhoneNumberPage> {
                 ),
                 ElevatedButton(
                     onPressed: (){
-                      _authModel.verifyPhoneNumber(_phoneNumberController.text);
+                      _authModel.verifyPhoneNumber(_phoneNumberController.text, showMessage);
                     },
                     child: Text('Send OTP'))
               ]
@@ -53,6 +53,15 @@ class _PhoneNumberPageState extends State<PhoneNumberPage> {
         ),
       ),
     );
+  }
+
+  showMessage(String message){
+      ScaffoldMessenger.of(context).showSnackBar(SnackBar(content: Text(message)));
+  }
+  generateMessageCallback(String message){
+    return (){
+      ScaffoldMessenger.of(context).showSnackBar(SnackBar(content: Text(message)));
+    };
   }
 }
 

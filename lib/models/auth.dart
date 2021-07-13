@@ -41,27 +41,31 @@ class AuthModel extends ChangeNotifier{
     log('AuthModel listener has been notified of possible auth state change');
   }
 
-  void verifyPhoneNumber(String phoneNumber){
+  void verifyPhoneNumber(String phoneNumber,  void Function(String) showMessage,){
     this._auth.verifyPhoneNumber(
         phoneNumber: phoneNumber,
         verificationCompleted: (phoneAuthCredential){
           this._auth.signInWithCredential(phoneAuthCredential);
           _currentAppState = AppState.LoggedIn;
+          showMessage('Logged in');
           notifyListeners();
         },
         verificationFailed: (error) {
           if (error.code == 'invalid-phone-number') {
             print('The provided phone number is not valid.');
           }
+          showMessage(error.code);
         },
         codeSent: (verificationId, forceResendingToken){
           log('Code Sent');
           this._verificationId =  verificationId;
           _currentLoginState = LoginView.OTP;
+          showMessage('OTP Sent');
           notifyListeners();
         },
         codeAutoRetrievalTimeout: (verificationId) {
           log('OTP Timeout');
+          showMessage('OTP Timeout');
         },
     );
   }
